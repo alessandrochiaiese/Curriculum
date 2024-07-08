@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progetti | Alessandro Chiaiese</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="projects.html">Progetti</a></li>
+                <li><a href="github.html">GitHub</a></li>
+                <li><a href="referrals.html">Referral Codes</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="projects">
+            <h1>I miei Progetti</h1>
+            <div id="projects-list">
+                <!-- I progetti verranno caricati qui tramite jQuery -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Alessandro Chiaiese. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            //$.getJSON('assets/data/projects.json', function (data) {
+            
+                var projects = [
+                    {
+                        "title": "Re-ingegnerizzazione di un negozio di arredamenti da casa",
+                        "description": "L'obiettivo del progetto è quello di effettuare una re-ingegnerizzazione dei processi di un negozio di arradamenti da casa, realizzando un analisi AS-IS, un'analisi TO-BE, una Fit-Gap Analysis, un'analisi delle alternative e dei rispettivi costi, ed, infine, un Project Management",
+                        "link": "https://github.com/tuo_username/progetto1"
+                    },
+                    {
+                        "title": "Data Analyst COVID Data with SQL",
+                        "description": "Il progetto Data Analyst COVID consiste nella creazione e gestione di un database popolato con informazioni che includono bollettini, ospedali italiani, storici ISTAT, normalizzati in 3FN. L'obiettivo è quello di esplorare la creazione di master db e di master slave, utilizzando approccio sia bottom-top e sia top-bottom. Successivamente la realizzazione di funzioni e procedure per effettuare query complesse e articolate al fine di visualizzare graficamente e verificare la veridicità dei dati e le possibili problematiche.",
+                        "link": "https://github.com/tuo_username/progetto2"
+                    },
+                    {
+                        "title": "HyperSpectral Terrain Recognition",
+                        "description": "HyperSpectral Terrain Recognition è un sistema intelligente che utilizza la tecnologia BERT, in particolare HSI-BERT. Il sistema implementato è capace di riconoscere il tipo di terreno e suggerire il tipo di coltura da applicare tenendo conto della tessitura e tecniche di coltura. Tale progetto nasce in un contesto universitario.",
+                        "link": "https://github.com/tuo_username/progetto2"
+                    } 
+                ]
+                //var projects = data.projects;
+                if (projects.length > 0) {
+                    $.each(projects, function (index, project) {
+                        $('#projects-list').append(
+                            '<div class="project">' +
+                            '<h2>' + project.title + '</h2>' +
+                            '<p>' + project.description + '</p>' +
+                            '<a href="' + project.link + '" class="btn">Visualizza su GitHub</a>' +
+                            '</div>'
+                        );
+                    });
+                } else {
+                    $('#projects-list').append('<p>Nessun progetto disponibile.</p>');
+                }
+            //}).fail(function () {
+            //    $('#projects-list').append('<p>Errore nel caricamento dei progetti.</p>');
+            //}
+            });
+
+            // Imposta l'anno corrente nel footer
+            $('#current-year').text(new Date().getFullYear());
+        //});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referral Codes | Alessandro Chiaiese</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .referrals {
+            padding: 20px;
+        }
+
+        .referral {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .referral h2 {
+            margin-top: 15px;
+            font-size: 1.25rem;
+            color: #333;
+        }
+
+        .referral p {
+            color: #555;
+        }
+
+        .referral .btn {
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #f8f9fa;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Griglia 3 colonne per dispositivi medio-grandi e oltre */
+        @media (min-width: 768px) {
+            .referrals .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="projects.html">Progetti</a></li>
+                <li><a href="github.html">GitHub</a></li>
+                <li><a href="referrals.html">Referral Codes</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="referrals">
+            <h1>Codici Referral</h1>
+            <div class="container" id="referral-codes">
+                <!-- I codici referral verranno caricati qui tramite jQuery -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Alessandro Chiaiese. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            // Qui puoi includere il tuo file JSON con i dati dei codici referral
+            // $.getJSON('assets/data/referrals.json', function (data) {
+            var referrals = [
+                {
+                    "platform": "Binance",
+                    "code": "QEKWKLXD",
+                    "link": "accounts.binance.me/en/register?ref=QEKWKLXD",
+                    "description": "Accedi a Binance e inizia a fare trading con BTC e ETH."
+                },
+                {
+                    "platform": "crypto.com",
+                    "code": "xuq3p77jgq",
+                    "link": "crypto.com/app/xuq3p77jgq",
+                    "description": "Accedi a crypto.com e inizia a fare trading con BTC e ETH."
+                },
+                {
+                    "platform": "coinbase",
+                    "code": "chiaie_5",
+                    "link": "coinbase.com/join/chiaie_5?src=android-link",
+                    "description": "Accedi a coinbase e inizia a fare trading con BTC e ETH."
+                },
+                {
+                    "platform": "blockfi.com",
+                    "code": "788ffa31",
+                    "link": "blockfi.com/?ref=788ffa31",
+                    "description": "Accedi a blockfi.com e inizia a fare trading con BTC e ETH."
+                },
+                {
+                    "platform": "Huobi Global",
+                    "code": "p7vn3223",
+                    "link": "htx.com/invite/it-it/1f?invite_code=p7vn3223",
+                    "description": "Accedi a Huobi Global e inizia a fare trading con BTC e ETH."
+                }
+            ];
+            if (referrals.length > 0) {
+                $.each(referrals, function (index, referral) {
+                    $('#referral-codes').append(
+                        '<div class="referral card">' +
+                        '<div class="card-body">' +
+                        '<h2 class="card-title">' + referral.platform + '</h2>' +
+                        '<p class="card-text">Codice: ' + referral.code + '</p>' +
+                        '<a class="btn btn-primary" href="' + referral.link + '" target="_blank">Get App</a>' +
+                        '<p class="card-text">' + referral.description + '</p>' +
+                        '</div>' +
+                        '</div>'
+                    );
+                });
+            } else {
+                $('#referral-codes').append('<p>Nessun codice referral disponibile.</p>');
+            }
+            // Imposta l'anno corrente nel footer
+            $('#current-year').text(new Date().getFullYear());
+        });
+    </script>
+</body>
+
+</html>

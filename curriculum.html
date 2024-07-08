@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum | Alessandro Chiaiese</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .progress {
+            background-color: #f3f3f3;
+            border-radius: 13px;
+            padding: 3px;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            height: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .btn-download {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4285F4;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .btn-download:hover {
+            background: #357ae8;
+        }
+        .skills-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .skills-column {
+            width: 45%;
+        }
+        .chart-container {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="projects.html">Progetti</a></li>
+                <li><a href="github.html">GitHub</a></li>
+                <li><a href="referrals.html">Referral Codes</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="cv">
+            <h1>Curriculum Vitae</h1>
+            <a href="assets/data/CV5610215.pdf" class="btn-download" download>Scarica il mio Curriculum</a>
+            <div class="chart-container">
+                <canvas id="skillsChart"></canvas>
+            </div>
+            <div class="cv-section">
+                <h2>Informazioni Personali</h2>
+                <p><strong>Nome:</strong> Alessandro Chiaiese</p>
+                <p><strong>Indirizzo:</strong> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                  </svg></p>
+                <p><strong>Email:</strong> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                  </svg></p>
+                <p><strong>Telefono:</strong> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock" viewBox="0 0 16 16">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2M5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1"/>
+                  </svg></p>
+            </div>
+            <div class="cv-section">
+                <h2>Profilo Professionale</h2>
+                <p>Sono uno sviluppatore full-stack con una laurea magistrale in ingegneria gestionale e un diploma tecnico in informatica. Ho esperienza nello sviluppo software utilizzando vari linguaggi di programmazione come Python, C#, JavaScript, TypeScript, HTML, CSS, jQuery, SQL, T-SQL, JSON, XML e ABAP. Possiedo solide competenze nell'utilizzo di editor e strumenti come Visual Studio, Unity3D, Putty, FileZilla, Postman, Apache, XAMPP e Nginx. Sono anche esperto nell'utilizzo di framework come Flask, Django, ASP.NET, Angular e Nest.js. Le mie capacità organizzative e conoscenze dei metodi di ottimizzazione, gestione e contabilità mi permettono di eccellere in ambienti di lavoro dinamici e sfidanti.</p>
+            </div>
+            <div class="cv-section">
+                <h2>Esperienza Lavorativa</h2>
+                <div class="cv-item">
+                    <h3>Sviluppatore di software (Back-end developer)</h3>
+                    <p><strong>Azienda:</strong> INEXT.AI </p>
+                    <p><strong>Periodo:</strong> 03/2023 - 05/2024</p>
+                    <p>Responsabile dello sviluppo e manutenzione di applicazioni web utilizzando tecnologie come Flask e successivamente Nest.js. Collaborato con il team di progettazione per creare interfacce utente intuitive e performanti.</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Sviluppatore di software (Full-stack developer)</h3>
+                    <p><strong>Azienda:</strong> APS s.r.l.</p>
+                    <p><strong>Periodo:</strong> 09/2021 - 10/2021</p>
+                    <p>Programamzione di web service con Angular (Typescript), ASP.NET (C#) e MySQL (SQL).</p>
+                </div>
+            </div>
+            <div class="cv-section">
+                <h2>Istruzione</h2>
+                <div class="cv-item">
+                    <h3>Laurea Magistrale in Ingegneria Gestionale</h3>
+                    <p><strong>Università:</strong> Università degli Studi di Napoli 'FEDERICO II'</p>
+                    <p><strong>Periodo:</strong> 09/2018 - 12/2022</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Diploma Tecnico in Informatica</h3>
+                    <p><strong>Istituto:</strong> Istituto Tecnico Industriale RIGHI</p>
+                    <p><strong>Periodo:</strong> 09/2013 - 2018</p>
+                </div>
+            </div>
+            <div class="cv-section">
+                <h2>Competenze</h2>
+                <div class="skills-container">
+                    <div class="skills-column">
+                        <h3>Hard Skills</h3>
+                        <div class="skill">
+                            <p>Python</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%; background-color: #4caf50;">90%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>JavaScript</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%; background-color: #2196F3;">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Angular</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%; background-color: #ff9800;">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Django</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%; background-color: #9c27b0;">75%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>SQL</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%; background-color: #f44336;">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-column">
+                        <h3>Soft Skills</h3>
+                        <div class="skill">
+                            <p>Comunicazione</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%; background-color: #8bc34a;">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Leadership</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%; background-color: #03a9f4;">80%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Problem Solving</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%; background-color: #ffeb3b;">90%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Teamwork</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%; background-color: #ff5722;">85%</div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <p>Creatività</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%; background-color: #e91e63;">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cv-section">
+                <h2>Certificazioni</h2>
+                <div class="cv-item">
+                    <h3>Certificazione ABAP SAP</h3>
+                    <p><strong>Ente:</strong> ItConsulting</p>
+                    <p><strong>Anno:</strong> 2022</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Certificazione Service Hub Software</h3>
+                    <p><strong>Ente:</strong> Hubspot Academy</p>
+                    <p><strong>Anno:</strong> 2022</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Certificazione Inbound Marketing</h3>
+                    <p><strong>Ente:</strong> Hubspot Academy</p>
+                    <p><strong>Anno:</strong> 2022</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Certificazione Inbound</h3>
+                    <p><strong>Ente:</strong> Hubspot Academy</p>
+                    <p><strong>Anno:</strong> 2022</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Certificazione CISCO</h3>
+                    <p><strong>Ente:</strong> Instituto Industriale Tecnico Augusto RIGHI</p>
+                    <p><strong>Anno:</strong> 2013</p>
+                </div>
+                <div class="cv-item">
+                    <h3>Certificazione ECDL Base</h3>
+                    <p><strong>Ente:</strong> Augusto</p>
+                    <p><strong>Anno:</strong> 2008</p>
+                </div>
+            </div>
+            <div class="cv-section">
+                <h2>Lingue</h2>
+                <p><strong>Italiano:</strong> Madrelingua</p>
+                <p><strong>Inglese:</strong> Fluente</p>
+                <p><strong>Spagnolo:</strong> Intermedio</p>
+            </div>
+            <div class="cv-section">
+                <h2>Interessi</h2>
+                <p>Appassionato di tecnologia e innovazione, mi piace esplorare nuove tecnologie e metodi di sviluppo. Nel tempo libero mi dedico alla lettura di libri di fantascienza e alla pratica dello sport, in particolare il calcio e il nuoto.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Alessandro Chiaiese. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Imposta l'anno corrente nel footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Dati per il grafico radar
+            const data = {
+                labels: ['Python', 'JavaScript', 'Angular', 'Problem Solving', 'Comunicazione'],
+                datasets: [{
+                    label: 'Competenze',
+                    data: [90, 85, 80, 90, 85],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            };
+
+            // Configurazione del grafico radar
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    }
+                }
+            };
+
+            // Creazione del grafico radar
+            const skillsChart = new Chart(
+                document.getElementById('skillsChart'),
+                config
+            );
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub | Alessandro Chiaiese</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .github {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #github-repos {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+            scroll-snap-type: x mandatory;
+        }
+
+        /* Custom Scrollbar Styles */
+        #github-repos::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        #github-repos::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        #github-repos::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        #github-repos::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Firefox scrollbar styles */
+        #github-repos {
+            scrollbar-width: thin;
+            scrollbar-color: #888 #f1f1f1;
+        }
+
+        .repo {
+            width: 300px; /* Fixed width */
+            height: auto; /* Fixed height */
+            flex: 0 0 auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            scroll-snap-align: start;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .repo:hover {
+            transform: scale(1.05);
+        }
+
+        .repo h2 a {
+            text-decoration: none;
+            color: #1a73e8;
+        }
+
+        .repo p {
+            margin: 10px 0;
+            color: #555;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+                <li><a href="projects.html">Progetti</a></li>
+                <li><a href="github.html">GitHub</a></li>
+                <li><a href="referrals.html">Referral Codes</a></li>
+                <li><a href="contact.html">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="github">
+            <h1>I miei repository GitHub</h1>
+            <div id="github-repos">
+                <!-- I repository verranno caricati qui tramite jQuery -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Alessandro Chiaiese. Tutti i diritti riservati.</p>
+    </footer>
+    <script>
+        $(document).ready(function() {
+            const githubUsername = "alessandrochiaiese"; // Inserisci qui il tuo username GitHub
+            const githubApiUrl = `https://api.github.com/users/${githubUsername}/repos`;
+
+            $.getJSON(githubApiUrl, function(repos) {
+                if (repos.length > 0) {
+                    $.each(repos, function(index, repo) {
+                        $('#github-repos').append(
+                            '<div class="repo">' +
+                            '<h2><a href="' + repo.html_url + '" target="_blank">' + repo.name + '</a></h2>' +
+                            '<p>' + (repo.description || 'Nessuna descrizione disponibile.') + '</p>' +
+                            '<p>⭐ ' + repo.stargazers_count + ' | 🍴 ' + repo.forks_count + '</p>' +
+                            '</div>'
+                        );
+                    });
+                } else {
+                    $('#github-repos').append('<p>Nessun repository trovato.</p>');
+                }
+            }).fail(function(jqxhr, textStatus, error) {
+                var err = textStatus + ", " + error;
+                console.log("Request Failed: " + err); // Log per debugging
+                $('#github-repos').append('<p>Errore nel caricamento dei repository GitHub.</p>');
+            });
+
+            // Imposta l'anno corrente nel footer
+            $('#current-year').text(new Date().getFullYear());
+        });
+    </script>
+</body>
+</html>
