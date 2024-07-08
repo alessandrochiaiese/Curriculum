@@ -1,0 +1,34 @@
+{
+    "referral_codes": [
+        {
+            "platform": "Binance",
+            "code": "QEKWKLXD",
+            "link": "accounts.binance.me/en/register?ref=QEKWKLXD",
+            "description": "Accedi a Binance e inizia a fare trading con BTC e ETH."
+        },
+        {
+            "platform": "crypto.com",
+            "code": "xuq3p77jgq",
+            "link": "crypto.com/app/xuq3p77jgq",
+            "description": "Accedi a crypto.com e inizia a fare trading con BTC e ETH."
+        }, 
+        {
+            "platform": "coinbase",
+            "code": "chiaie_5",
+            "link": "coinbase.com/join/chiaie_5?src=android-link",
+            "description": "Accedi a coinbase e inizia a fare trading con BTC e ETH."
+        },
+        {
+            "platform": "blockfi.com",
+            "code": "788ffa31",
+            "link": "blockfi.com/?ref=788ffa31",
+            "description": "Accedi a blockfi.com e inizia a fare trading con BTC e ETH."
+        },
+        {
+            "platform": "Huobi Global",
+            "code": "p7vn3223",
+            "link": "htx.com/invite/it-it/1f?invite_code=p7vn3223",
+            "description": "Accedi a Huobi Global e inizia a fare trading con BTC e ETH."
+        }
+    ]
+}

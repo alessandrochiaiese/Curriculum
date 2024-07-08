@@ -1,0 +1,15 @@
+{
+    "projects": [
+        {
+            "title": "Progetto 1",
+            "description": "Descrizione del progetto 1...",
+            "link": "https://github.com/tuo_username/progetto1"
+        },
+        {
+            "title": "Progetto 2",
+            "description": "Descrizione del progetto 2...",
+            "link": "https://github.com/tuo_username/progetto2"
+        }
+        
+    ]
+}
